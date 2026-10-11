@@ -1,0 +1,18 @@
+
+[
+  {
+    "id": 1,
+    "name": "Flask",
+    "description": "A lightweight Python web framework"
+  },
+  {
+    "id": 2,
+    "name": "MongoDB",
+    "description": "A NoSQL document database"
+  },
+  {
+    "id": 3,
+    "name": "DevOps",
+    "description": "Automation and reliable software delivery"
+  }
+]

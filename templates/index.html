@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask &amp; MongoDB Assignment</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <h1>Flask &amp; MongoDB Assignment</h1>
+        <p>Enter your details below.</p>
+
+        {% if error %}
+            <p class="error" role="alert">{{ error }}</p>
+        {% endif %}
+
+        <form action="{{ url_for('index') }}" method="POST">
+            <label for="name">Name:</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                maxlength="100"
+                value="{{ request.form.get('name', '') }}"
+                required
+            >
+
+            <label for="email">Email:</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                maxlength="254"
+                value="{{ request.form.get('email', '') }}"
+                required
+            >
+
+            <label for="message">Message:</label>
+            <textarea
+                id="message"
+                name="message"
+                maxlength="2000"
+                required
+            >{{ request.form.get('message', '') }}</textarea>
+
+            <button type="submit">Submit Data</button>
+        </form>
+
+        <p class="api-note">
+            API endpoint:
+            <a href="{{ url_for('api') }}">View JSON API</a>
+        </p>
+    </main>
+</body>
+</html>
